@@ -1,7 +1,11 @@
 plugins {
     id 'java'
+    id 'application'
 }
-
+application {
+    mainClass = 'hexlet.code.App'
+    applicationDefaultJvmArgs = ['-Dgreeting.language=en']
+}
 group 'hexlet.code'
 version '1.0-SNAPSHOT'
 
@@ -13,7 +17,9 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
 }
-
+compileJava {
+    options.release = 17
+}
 test {
     useJUnitPlatform()
 }
