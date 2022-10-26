@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import hexlet.code.games.Gcd;
+import hexlet.code.games.Prime;
 
 public class Check {
     public static boolean checkEven(int question, String answer) {
@@ -47,4 +48,18 @@ public class Check {
         Engine.gameOver();
         return false;
     }
+
+    public static boolean checkPrime(int question, String answer) {
+        String correctAnswer = Prime.isPrime(question) ? "yes" : "no";
+        if ((Prime.isPrime(question) && answer.equals("yes")) || (!Prime.isPrime(question) && answer.equals("no"))) {
+            System.out.println("Correct!");
+            return true;
+        }
+        System.out.print("'" + answer + "'" + " is wrong answer ;(.");
+        System.out.println(" Correct answer was " + "'" + correctAnswer + "'");
+        Engine.gameOver();
+        return false;
+    }
+
+
 }

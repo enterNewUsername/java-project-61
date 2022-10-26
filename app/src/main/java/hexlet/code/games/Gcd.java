@@ -13,7 +13,7 @@ public class Gcd {
 
         Engine.hello();
 
-        System.out.print("Find the greatest common divisor of given numbers.");
+        System.out.println("Find the greatest common divisor of given numbers.");
         while (countCorrect < 3) {
             int a = Engine.getRndNum(1, 100);
             int b = Engine.getRndNum(1, 50);

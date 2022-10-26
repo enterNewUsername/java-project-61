@@ -10,4 +10,6 @@ https://asciinema.org/a/40z5qdAQd0K69qlxZfVnM0a80
 https://asciinema.org/a/0PkoMQEcPGnljOgt82Tc6dB9e
 ### asciinema link Progression game
 https://asciinema.org/a/jXgnKBiWcmPJBlb7yWUiUozs5
+### asciinema link Prime game
+https://asciinema.org/a/7IrsxfwlB1bPnTXllr9DzCSTZ
 

@@ -14,7 +14,7 @@ public class Progression {
 
         Engine.hello();
 
-        System.out.print("What number is missing in the progression?");
+        System.out.println("What number is missing in the progression?");
         while (countCorrect < 3) {
             int[] progression = makeProgression();
             int hideElementNumber = Engine.getRndNum(0, progression.length - 1);
