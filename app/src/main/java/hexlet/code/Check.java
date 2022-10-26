@@ -11,4 +11,14 @@ public class Check {
         System.out.println(" Correct answer was " + "'" + correctAnswer + "'");
         return false;
     }
+
+    public static boolean checkCalc(int question, String answer) {
+        if (String.valueOf(question).equals(answer)) {
+            System.out.println("Correct!");
+            return true;
+        }
+        System.out.print("'" + answer + "'" + " is wrong answer ;(.");
+        System.out.println(" Correct answer was " + "'" + question + "'");
+        return false;
+    }
 }

@@ -19,7 +19,7 @@ public class Engine {
     }
 
     public static int getRndNum(int min, int max) {
-        return (int) ((Math.random() * (max - min)) + min);
+        return min + (int) (Math.random() * (max - min + 1));
     }
 
 
