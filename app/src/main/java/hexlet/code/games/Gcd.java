@@ -3,13 +3,11 @@ package hexlet.code.games;
 import hexlet.code.Check;
 import hexlet.code.Engine;
 
-import java.util.Scanner;
-
 import static hexlet.code.Engine.countCorrect;
+import static hexlet.code.Engine.scanner;
 
 public class Gcd {
     public static void gcdGame() {
-        Scanner scanner = new Scanner(System.in);
 
         Engine.hello();
 

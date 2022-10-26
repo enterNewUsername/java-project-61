@@ -3,13 +3,11 @@ package hexlet.code.games;
 import hexlet.code.Check;
 import hexlet.code.Engine;
 
-import java.util.Scanner;
-
 import static hexlet.code.Engine.countCorrect;
+import static hexlet.code.Engine.scanner;
 
 public class Even {
     public static void isEven() {
-        Scanner scanner = new Scanner(System.in);
 
         Engine.hello();
 

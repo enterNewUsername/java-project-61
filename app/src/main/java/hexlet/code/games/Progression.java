@@ -5,14 +5,11 @@ import hexlet.code.Engine;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Scanner;
-
 import static hexlet.code.Engine.countCorrect;
+import static hexlet.code.Engine.scanner;
 
 public class Progression {
     public static void progressionGame() {
-        Scanner scanner = new Scanner(System.in);
-
         Engine.hello();
 
         System.out.println("What number is missing in the progression?");
