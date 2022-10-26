@@ -8,4 +8,6 @@ https://asciinema.org/a/VSS7RWgSyozwCPSnra9STrofn
 https://asciinema.org/a/40z5qdAQd0K69qlxZfVnM0a80
 ### asciinema link GCD game
 https://asciinema.org/a/0PkoMQEcPGnljOgt82Tc6dB9e
+### asciinema link Progression game
+https://asciinema.org/a/jXgnKBiWcmPJBlb7yWUiUozs5
 
