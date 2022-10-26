@@ -29,10 +29,13 @@ public class Prime {
     }
 
     public static boolean isPrime(int number) {
-        int divider = number;
-        while (divider > 0) {
-            if (number % divider == 0) {
-                divider--;
+        if (number < 2) {
+            return false;
+        }
+        int divider = 2;
+        while (divider < number / 2) {
+            if (number % divider != 0) {
+                divider++;
             } else {
                 return false;
             }
