@@ -6,3 +6,6 @@
 https://asciinema.org/a/VSS7RWgSyozwCPSnra9STrofn
 ### asciinema link Calc game
 https://asciinema.org/a/40z5qdAQd0K69qlxZfVnM0a80
+### asciinema link GCD game
+https://asciinema.org/a/0PkoMQEcPGnljOgt82Tc6dB9e
+

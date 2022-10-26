@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Calc {
     public static void calcGame() {
+        // Count of correct answers
         int countCorrect = 0;
         Scanner scanner = new Scanner(System.in);
 
