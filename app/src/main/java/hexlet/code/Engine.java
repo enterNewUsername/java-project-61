@@ -4,6 +4,16 @@ import java.util.Scanner;
 
 public class Engine {
     public static String userName;
+    //Count of correct answers
+    public static int countCorrect;
+
+    public static String mainMenu() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter the game number and press Enter.");
+        System.out.println("1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n6 - Prime\n0 - Exit");
+        System.out.print("Your choice: ");
+        return scanner.next();
+    }
 
     public static void hello() {
         Scanner scanner = new Scanner(System.in);
@@ -16,10 +26,12 @@ public class Engine {
 
     public static void congrats() {
         System.out.println("Congratulations, " + userName + "!");
+        countCorrect = 0;
     }
 
     public static void gameOver() {
         System.out.println("Let's try again, " + userName + "!");
+        countCorrect = 0;
     }
 
     public static int getRndNum(int min, int max) {

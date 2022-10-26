@@ -6,10 +6,11 @@ import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Scanner;
+
+import static hexlet.code.Engine.countCorrect;
+
 public class Progression {
     public static void progressionGame() {
-        // Count of correct answers
-        int countCorrect = 0;
         Scanner scanner = new Scanner(System.in);
 
         Engine.hello();

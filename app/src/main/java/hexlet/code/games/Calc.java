@@ -5,10 +5,10 @@ import hexlet.code.Engine;
 
 import java.util.Scanner;
 
+import static hexlet.code.Engine.countCorrect;
+
 public class Calc {
     public static void calcGame() {
-        // Count of correct answers
-        int countCorrect = 0;
         Scanner scanner = new Scanner(System.in);
 
         Engine.hello();
