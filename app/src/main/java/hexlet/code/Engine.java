@@ -18,6 +18,10 @@ public class Engine {
         System.out.println("Congratulations, " + userName + "!");
     }
 
+    public static void gameOver() {
+        System.out.println("Let's try again, " + userName + "!");
+    }
+
     public static int getRndNum(int min, int max) {
         return min + (int) (Math.random() * (max - min + 1));
     }

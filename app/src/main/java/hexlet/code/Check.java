@@ -11,6 +11,7 @@ public class Check {
         String correctAnswer = question % 2 == 0 ? "yes" : "no";
         System.out.print("'" + answer + "'" + " is wrong answer ;(.");
         System.out.println(" Correct answer was " + "'" + correctAnswer + "'");
+        Engine.gameOver();
         return false;
     }
 
@@ -21,6 +22,7 @@ public class Check {
         }
         System.out.print("'" + answer + "'" + " is wrong answer ;(.");
         System.out.println(" Correct answer was " + "'" + question + "'");
+        Engine.gameOver();
         return false;
     }
 
@@ -31,6 +33,18 @@ public class Check {
         }
         System.out.print("'" + answer + "'" + " is wrong answer ;(.");
         System.out.println(" Correct answer was " + "'" + Gcd.findGcd(a, b) + "'");
+        Engine.gameOver();
+        return false;
+    }
+
+    public static boolean checkProgression(int[] progression, int hideElementNumber, String answer) {
+        if (String.valueOf(progression[hideElementNumber]).equals(answer)) {
+            System.out.println("Correct!");
+            return true;
+        }
+        System.out.print("'" + answer + "'" + " is wrong answer ;(.");
+        System.out.println(" Correct answer was " + "'" + progression[hideElementNumber] + "'");
+        Engine.gameOver();
         return false;
     }
 }
