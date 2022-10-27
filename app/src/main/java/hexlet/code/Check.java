@@ -56,7 +56,7 @@ public class Check {
             return true;
         }
         System.out.print("'" + answer + "'" + " is wrong answer ;(.");
-        System.out.println(" Correct answer was " + "'" + correctAnswer + "'" + question);
+        System.out.println(" Correct answer was " + "'" + correctAnswer + "'");
         Engine.gameOver();
         return false;
     }

@@ -3,31 +3,30 @@ package hexlet.code.games;
 import hexlet.code.Check;
 import hexlet.code.Engine;
 
-import static hexlet.code.Engine.countCorrect;
-import static hexlet.code.Engine.scanner;
+import java.util.Scanner;
+
+import static hexlet.code.Engine.getCountCorrect;
 
 public class Prime {
     public static void primeGame() {
 
         Engine.hello();
 
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-
-        while (countCorrect < 3) {
-            int minNum = 10;
-            int maxNum = 200;
-            int question = Engine.getRndNum(minNum, maxNum);
+        System.out.print("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        int countCorrect = getCountCorrect();
+        while (countCorrect >= -1) {
+            Scanner scanner = new Scanner(System.in);
+            int question = Engine.getRndNum();
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
             String answer = scanner.next();
             if (Check.checkPrime(question, answer)) {
-                countCorrect++;
+                countCorrect--;
             } else {
                 return;
             }
         }
         Engine.congrats();
-        scanner.close();
     }
 
     public static boolean isPrime(int number) {
