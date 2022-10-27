@@ -16,8 +16,8 @@ public class Gcd {
         int countCorrect = getCountCorrect();
         while (countCorrect >= -1) {
             Scanner scanner = new Scanner(System.in);
-            int a = Engine.getRndNum();
-            int b = Engine.getRndNum();
+            int a = Engine.getRndNum() + 1;
+            int b = Engine.getRndNum() + 1;
             System.out.println("Question: " + a + " " + b);
             System.out.print("Your answer: ");
             String answer = scanner.next();

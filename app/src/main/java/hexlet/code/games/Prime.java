@@ -12,7 +12,8 @@ public class Prime {
 
         Engine.hello();
 
-        System.out.print("Answer 'yes' if given number is prime. Otherwise answer 'no'.\n");
+        System.out.print("Answer 'yes' if given number is prime. ");
+        System.out.println("Otherwise answer 'no'.");
         int countCorrect = getCountCorrect();
         while (countCorrect >= -1) {
             Scanner scanner = new Scanner(System.in);
