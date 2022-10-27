@@ -30,9 +30,11 @@ public class Progression {
     }
 
     public static int @NotNull [] makeProgression() {
-        int length = Engine.getRndNum(7, 12);
-        int diff = Engine.getRndNum(2, 9);
-        int first = Engine.getRndNum(1, 99);
+        int length = 10;
+        int maxDiff = 9;
+        int maxFirstNum = 99;
+        int diff = Engine.getRndNum(1, maxDiff);
+        int first = Engine.getRndNum(1, maxFirstNum);
         int[] progression = new int[length];
         for (var i = 0; i < length; i++) {
             progression[i] = first;

@@ -28,9 +28,13 @@ public class Calc {
     public static int result = 0;
     public static String question = "";
     public static void calcChoice() {
-        int choice = Engine.getRndNum(1, 3);
-        int x = Engine.getRndNum(1, 75);
-        int y = Engine.getRndNum(1, 15);
+        int min = 1;
+        int maxX = 75;
+        int maxY = 15;
+        int maxRnd = 3;
+        int choice = Engine.getRndNum(min, maxRnd);
+        int x = Engine.getRndNum(min, maxX);
+        int y = Engine.getRndNum(min, maxY);
 
         switch (choice) {
             case 1 -> {

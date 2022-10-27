@@ -14,7 +14,9 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         while (countCorrect < 3) {
-            int question = Engine.getRndNum(10, 200);
+            int minNum = 10;
+            int maxNum = 200;
+            int question = Engine.getRndNum(minNum, maxNum);
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
             String answer = scanner.next();

@@ -13,8 +13,11 @@ public class Gcd {
 
         System.out.println("Find the greatest common divisor of given numbers.");
         while (countCorrect < 3) {
-            int a = Engine.getRndNum(1, 100);
-            int b = Engine.getRndNum(1, 50);
+            int min = 1;
+            int maxA = 100;
+            int maxB = 50;
+            int a = Engine.getRndNum(min, maxA);
+            int b = Engine.getRndNum(min, maxB);
             System.out.println("Question: " + a + " " + b);
             System.out.print("Your answer: ");
             String answer = scanner.next();

@@ -14,7 +14,9 @@ public class Even {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         while (countCorrect < 3) {
-            int question = Engine.getRndNum(10, 200);
+            int minNum = 10;
+            int maxNum = 200;
+            int question = Engine.getRndNum(minNum, maxNum);
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
             String answer = scanner.next();
