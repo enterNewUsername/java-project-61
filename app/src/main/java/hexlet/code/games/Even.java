@@ -3,8 +3,9 @@ package hexlet.code.games;
 import hexlet.code.Check;
 import hexlet.code.Engine;
 
-import static hexlet.code.Engine.countCorrect;
-import static hexlet.code.Engine.scanner;
+import java.util.Scanner;
+
+import static hexlet.code.Engine.getCountCorrect;
 
 public class Even {
     public static void isEven() {
@@ -12,21 +13,19 @@ public class Even {
         Engine.hello();
 
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-
-        while (countCorrect < 3) {
-            int minNum = 10;
-            int maxNum = 200;
-            int question = Engine.getRndNum(minNum, maxNum);
+        int countCorrect = getCountCorrect();
+        while (countCorrect >= -1) {
+            Scanner scanner = new Scanner(System.in);
+            int question = Engine.getRndNum();
             System.out.println("Question: " + question);
             System.out.print("Your answer: ");
             String answer = scanner.next();
             if (Check.checkEven(question, answer)) {
-                countCorrect++;
+                countCorrect--;
             } else {
                 return;
             }
         }
         Engine.congrats();
-        scanner.close();
     }
 }

@@ -3,8 +3,9 @@ package hexlet.code.games;
 import hexlet.code.Check;
 import hexlet.code.Engine;
 
-import static hexlet.code.Engine.countCorrect;
-import static hexlet.code.Engine.scanner;
+import java.util.Scanner;
+
+import static hexlet.code.Engine.getCountCorrect;
 
 public class Gcd {
     public static void gcdGame() {
@@ -12,23 +13,21 @@ public class Gcd {
         Engine.hello();
 
         System.out.println("Find the greatest common divisor of given numbers.");
-        while (countCorrect < 3) {
-            int min = 1;
-            int maxA = 100;
-            int maxB = 50;
-            int a = Engine.getRndNum(min, maxA);
-            int b = Engine.getRndNum(min, maxB);
+        int countCorrect = getCountCorrect();
+        while (countCorrect >= -1) {
+            Scanner scanner = new Scanner(System.in);
+            int a = Engine.getRndNum();
+            int b = Engine.getRndNum();
             System.out.println("Question: " + a + " " + b);
             System.out.print("Your answer: ");
             String answer = scanner.next();
             if (Check.checkGcd(a, b, answer)) {
-                countCorrect++;
+                countCorrect--;
             } else {
                 return;
             }
         }
         Engine.congrats();
-        scanner.close();
     }
 
     public static int findGcd(int a, int b) {

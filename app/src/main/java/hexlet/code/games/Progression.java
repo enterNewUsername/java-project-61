@@ -5,38 +5,38 @@ import hexlet.code.Engine;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
-import static hexlet.code.Engine.countCorrect;
-import static hexlet.code.Engine.scanner;
+import java.util.Scanner;
+
+import static hexlet.code.Engine.getCountCorrect;
 
 public class Progression {
     public static void progressionGame() {
         Engine.hello();
 
         System.out.println("What number is missing in the progression?");
-        while (countCorrect < 3) {
-            int[] progression = makeProgression();
+        int countCorrect = getCountCorrect();
+        while (countCorrect >= -1) {
+            Scanner scanner = new Scanner(System.in);
+            final int progressionLength = 10;
+            int[] progression = makeProgression(progressionLength);
             int hideElementNumber = Engine.getRndNum(0, progression.length - 1);
             System.out.println("Question: " + hideElement(progression, hideElementNumber));
             System.out.print("Your answer: ");
             String answer = scanner.next();
             if (Check.checkProgression(progression, hideElementNumber, answer)) {
-                countCorrect++;
+                countCorrect--;
             } else {
                 return;
             }
         }
         Engine.congrats();
-        scanner.close();
     }
 
-    public static int @NotNull [] makeProgression() {
-        int length = 10;
-        int maxDiff = 9;
-        int maxFirstNum = 99;
-        int diff = Engine.getRndNum(1, maxDiff);
-        int first = Engine.getRndNum(1, maxFirstNum);
-        int[] progression = new int[length];
-        for (var i = 0; i < length; i++) {
+    public static int @NotNull [] makeProgression(int progressionLength) {
+        int diff = Engine.getRndNum();
+        int first = Engine.getRndNum();
+        int[] progression = new int[progressionLength];
+        for (var i = 0; i < progressionLength; i++) {
             progression[i] = first;
             first = first + diff;
         }
