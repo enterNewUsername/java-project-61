@@ -1,40 +1,35 @@
 package hexlet.code.games;
 
-import hexlet.code.Check;
-import hexlet.code.Engine;
+import hexlet.code.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Scanner;
-
-import static hexlet.code.Engine.getCountCorrect;
-
 public class Progression {
-    public static void progressionGame() {
-        Engine.hello();
 
-        System.out.println("What number is missing in the progression?");
-        int countCorrect = getCountCorrect();
-        while (countCorrect >= -1) {
-            Scanner scanner = new Scanner(System.in);
-            final int progressionLength = 10;
-            int[] progression = makeProgression(progressionLength);
-            int hideElementNumber = Engine.getRndNum(0, progression.length - 1);
-            System.out.println("Question: " + hideElement(progression, hideElementNumber));
-            System.out.print("Your answer: ");
-            String answer = scanner.next();
-            if (Check.checkProgression(progression, hideElementNumber, answer)) {
-                countCorrect--;
-            } else {
-                return;
-            }
-        }
-        Engine.congrats();
+    private static int question = 0;
+
+    private static String questionToText = "";
+
+    public static void getQuestion() {
+        final int progressionLength = 10;
+        int[] progression = makeProgression(progressionLength);
+        int hiddenElementNumber = RandomUtils.getRndNum(0, progressionLength - 1);
+        question = progression[hiddenElementNumber];
+        questionToText = hideElement(progression, hiddenElementNumber);
     }
 
+    public static String convertQuestionToText() {
+        return questionToText;
+    }
+
+    public static String getCorrectAnswer() {
+        return String.valueOf(question);
+    }
+
+
     public static int @NotNull [] makeProgression(int progressionLength) {
-        int diff = Engine.getRndNum();
-        int first = Engine.getRndNum();
+        int diff = RandomUtils.getRndNum();
+        int first = RandomUtils.getRndNum();
         int[] progression = new int[progressionLength];
         for (var i = 0; i < progressionLength; i++) {
             progression[i] = first;
@@ -49,5 +44,9 @@ public class Progression {
         return converted.replaceAll(hiddenSym, "..");
 
 
+    }
+
+    public static boolean checkProgression(String answer) {
+        return String.valueOf(question).equals(answer);
     }
 }

@@ -1,34 +1,31 @@
 package hexlet.code.games;
 
-import hexlet.code.Check;
-import hexlet.code.Engine;
-
-import java.util.Scanner;
-
-import static hexlet.code.Engine.getCountCorrect;
+import hexlet.code.RandomUtils;
 
 public class Gcd {
-    public static void gcdGame() {
 
-        Engine.hello();
+    private static int question = 0;
+    private static String questionToText = "";
 
-        System.out.println("Find the greatest common divisor of given numbers.");
-        int countCorrect = getCountCorrect();
-        while (countCorrect >= -1) {
-            Scanner scanner = new Scanner(System.in);
-            int a = Engine.getRndNum() + 1;
-            int b = Engine.getRndNum() + 1;
-            System.out.println("Question: " + a + " " + b);
-            System.out.print("Your answer: ");
-            String answer = scanner.next();
-            if (Check.checkGcd(a, b, answer)) {
-                countCorrect--;
-            } else {
-                return;
-            }
-        }
-        Engine.congrats();
+    public static void getQuestion() {
+        int a = RandomUtils.getRndNum() + 1;
+        int b = RandomUtils.getRndNum() + 1;
+        questionToText = a + " " + b;
+        question = findGcd(a, b);
     }
+
+    public static String convertQuestionToText() {
+        return questionToText;
+    }
+
+    public static String getCorrectAnswer() {
+        return String.valueOf(question);
+    }
+
+    public static boolean checkGcd(String answer) {
+        return  String.valueOf(question).equals(answer);
+    }
+
 
     public static int findGcd(int a, int b) {
         int temp = 0;
@@ -48,5 +45,6 @@ public class Gcd {
         }
         return b;
     }
+
 }
 

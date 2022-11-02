@@ -1,31 +1,29 @@
 package hexlet.code.games;
 
-import hexlet.code.Check;
-import hexlet.code.Engine;
-
-import java.util.Scanner;
-
-import static hexlet.code.Engine.getCountCorrect;
+import hexlet.code.RandomUtils;
 
 public class Even {
-    public static void isEven() {
+    private static int question;
 
-        Engine.hello();
-
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        int countCorrect = getCountCorrect();
-        while (countCorrect >= -1) {
-            Scanner scanner = new Scanner(System.in);
-            int question = Engine.getRndNum();
-            System.out.println("Question: " + question);
-            System.out.print("Your answer: ");
-            String answer = scanner.next();
-            if (Check.checkEven(question, answer)) {
-                countCorrect--;
-            } else {
-                return;
-            }
-        }
-        Engine.congrats();
+    public static void getQuestion() {
+        question = RandomUtils.getRndNum();
     }
+
+    public static String convertQuestionToText() {
+        return String.valueOf(question);
+    }
+
+    public static String getCorrectAnswer() {
+        return isEven() ? "yes" : "no";
+    }
+
+    public static boolean checkEven(String answer) {
+        return ((isEven() && answer.equals("yes")) || (!isEven() && answer.equals("no")));
+
+    }
+
+    public static boolean isEven() {
+        return question % 2 == 0;
+    }
+
 }

@@ -1,42 +1,33 @@
 package hexlet.code.games;
 
-import hexlet.code.Check;
-import hexlet.code.Engine;
-
-import java.util.Scanner;
-
-import static hexlet.code.Engine.getCountCorrect;
+import hexlet.code.RandomUtils;
 
 public class Prime {
-    public static void primeGame() {
+    private static int question;
 
-        Engine.hello();
-
-        System.out.print("Answer 'yes' if given number is prime. ");
-        System.out.println("Otherwise answer 'no'.");
-        int countCorrect = getCountCorrect();
-        while (countCorrect >= -1) {
-            Scanner scanner = new Scanner(System.in);
-            int question = Engine.getRndNum();
-            System.out.println("Question: " + question);
-            System.out.print("Your answer: ");
-            String answer = scanner.next();
-            if (Check.checkPrime(question, answer)) {
-                countCorrect--;
-            } else {
-                return;
-            }
-        }
-        Engine.congrats();
+    public static void getQuestion() {
+        question = RandomUtils.getRndNum();
     }
 
-    public static boolean isPrime(int number) {
-        if (number < 2) {
+    public static String convertQuestionToText() {
+        return String.valueOf(question);
+    }
+
+    public static String getCorrectAnswer() {
+        return isPrime() ? "yes" : "no";
+    }
+
+    public static boolean checkPrime(String answer) {
+        return (isPrime() && answer.equals("yes")) || (!isPrime() && answer.equals("no"));
+    }
+
+    private static boolean isPrime() {
+        if (question < 2) {
             return false;
         }
         int divider = 2;
-        while (divider < number / 2) {
-            if (number % divider != 0) {
+        while (divider < question / 2) {
+            if (question % divider != 0) {
                 divider++;
             } else {
                 return false;
