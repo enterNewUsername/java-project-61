@@ -6,7 +6,6 @@ import hexlet.code.RandomUtils;
 public class Even {
     private static int question;
     static final String GAME_QUESTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-    static final int MAX_NUMBER_OF_QUESTIONS_AND_ANSWERS = 6;
     private static void getQuestion() {
         question = RandomUtils.getRandomNumber();
     }
@@ -20,7 +19,7 @@ public class Even {
         return question % 2 == 0;
     }
     public static void runEvenGame() {
-        String[] arrayOfQuestionsAndCorrectAnswers = new String[MAX_NUMBER_OF_QUESTIONS_AND_ANSWERS];
+        String[] arrayOfQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
         int i = 0;
         while (i < arrayOfQuestionsAndCorrectAnswers.length) {
             getQuestion();

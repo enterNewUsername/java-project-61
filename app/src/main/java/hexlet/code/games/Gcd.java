@@ -7,7 +7,6 @@ public class Gcd {
     private static int question = 0;
     private static String questionToText = "";
     static final String GAME_QUESTION = "Find the greatest common divisor of given numbers.";
-    static final int MAX_NUMBER_OF_QUESTIONS_AND_ANSWERS = 6;
     private static void getQuestion() {
         int a = RandomUtils.getRandomNumber() + 1;
         int b = RandomUtils.getRandomNumber() + 1;
@@ -39,7 +38,7 @@ public class Gcd {
         return b;
     }
     public static void runGcdGame() {
-        String[] arrayOfQuestionsAndCorrectAnswers = new String[MAX_NUMBER_OF_QUESTIONS_AND_ANSWERS];
+        String[] arrayOfQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
         int i = 0;
         while (i < arrayOfQuestionsAndCorrectAnswers.length) {
             getQuestion();

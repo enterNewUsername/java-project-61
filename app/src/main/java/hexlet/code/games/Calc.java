@@ -7,7 +7,6 @@ public class Calc {
     private static int question = 0;
     private static String questionToText = "";
     static final String GAME_QUESTION = "What is the result of the expression?";
-    static final int MAX_NUMBER_OF_QUESTIONS_AND_ANSWERS = 6;
     private static void getQuestion() {
         calcChoice();
     }
@@ -42,7 +41,7 @@ public class Calc {
 
     }
     public static void runCalcGame() {
-        String[] arrayOfQuestionsAndCorrectAnswers = new String[MAX_NUMBER_OF_QUESTIONS_AND_ANSWERS];
+        String[] arrayOfQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
         int i = 0;
         while (i < arrayOfQuestionsAndCorrectAnswers.length) {
             getQuestion();

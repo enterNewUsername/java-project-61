@@ -9,7 +9,6 @@ public class Progression {
     private static int question = 0;
     private static String questionToText = "";
     static final String GAME_QUESTION = "What number is missing in the progression?";
-    static final int MAX_NUMBER_OF_QUESTIONS_AND_ANSWERS = 6;
     private static void getQuestion() {
         final int progressionLength = 10;
         int diff = RandomUtils.getRandomNumber();
@@ -40,7 +39,7 @@ public class Progression {
         return StringUtils.join(convertedToArray, ' ');
     }
     public static void runProgressionGame() {
-        String[] arrayOfQuestionsAndCorrectAnswers = new String[MAX_NUMBER_OF_QUESTIONS_AND_ANSWERS];
+        String[] arrayOfQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
         int i = 0;
         while (i < arrayOfQuestionsAndCorrectAnswers.length) {
             getQuestion();

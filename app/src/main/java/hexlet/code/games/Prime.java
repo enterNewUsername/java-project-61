@@ -6,7 +6,6 @@ import hexlet.code.RandomUtils;
 public class Prime {
     private static int question;
     static final String GAME_QUESTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    static final int MAX_NUMBER_OF_QUESTIONS_AND_ANSWERS = 6;
     private static void getQuestion() {
         question = RandomUtils.getRandomNumber();
     }
@@ -31,7 +30,7 @@ public class Prime {
         return true;
     }
     public static void runPrimeGame() {
-        String[] arrayOfQuestionsAndCorrectAnswers = new String[MAX_NUMBER_OF_QUESTIONS_AND_ANSWERS];
+        String[] arrayOfQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
         int i = 0;
         while (i < arrayOfQuestionsAndCorrectAnswers.length) {
             getQuestion();
