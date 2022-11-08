@@ -34,11 +34,10 @@ public class Progression {
         return progression;
     }
     private static @NotNull String hideElement(int[] progression, int elementNumber) {
-        String converted = StringUtils.join(progression, ' ');
-        String hiddenSym = String.valueOf(progression[elementNumber]);
-        return converted.replaceAll(hiddenSym, "..");
-
-
+        String convertedToString = StringUtils.join(progression, ' ');
+        String[] convertedToArray = convertedToString.split(" ");
+        convertedToArray[elementNumber] = "..";
+        return StringUtils.join(convertedToArray, ' ');
     }
     public static void runProgressionGame() {
         String[] arrayOfQuestionsAndCorrectAnswers = new String[MAX_NUMBER_OF_QUESTIONS_AND_ANSWERS];
