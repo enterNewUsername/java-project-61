@@ -1,29 +1,35 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
 import hexlet.code.RandomUtils;
 
 public class Even {
     private static int question;
-
-    public static void getQuestion() {
-        question = RandomUtils.getRndNum();
+    static final String GAME_QUESTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    static final int MAX_NUMBER_OF_QUESTIONS_AND_ANSWERS = 6;
+    private static void getQuestion() {
+        question = RandomUtils.getRandomNumber();
     }
-
-    public static String convertQuestionToText() {
+    private static String convertQuestionToText() {
         return String.valueOf(question);
     }
-
-    public static String getCorrectAnswer() {
+    private static String getCorrectAnswer() {
         return isEven() ? "yes" : "no";
     }
-
-    public static boolean checkEven(String answer) {
-        return ((isEven() && answer.equals("yes")) || (!isEven() && answer.equals("no")));
-
-    }
-
-    public static boolean isEven() {
+    private static boolean isEven() {
         return question % 2 == 0;
+    }
+    public static void runEvenGame() {
+        String[] arrayOfQuestionsAndCorrectAnswers = new String[MAX_NUMBER_OF_QUESTIONS_AND_ANSWERS];
+        int i = 0;
+        while (i < arrayOfQuestionsAndCorrectAnswers.length) {
+            getQuestion();
+            arrayOfQuestionsAndCorrectAnswers[i] = convertQuestionToText();
+            arrayOfQuestionsAndCorrectAnswers[i + 1] = getCorrectAnswer();
+            i = i + 2;
+        }
+        Engine.mainEngine(GAME_QUESTION, arrayOfQuestionsAndCorrectAnswers);
+
     }
 
 }
