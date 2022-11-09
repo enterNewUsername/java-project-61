@@ -7,16 +7,16 @@ public class Gcd {
     private static int question = 0;
     private static String questionToText = "";
     static final String GAME_QUESTION = "Find the greatest common divisor of given numbers.";
-    private static void getQuestion() {
+    private static void getGcdQuestion() {
         int a = RandomUtils.getRandomNumber() + 1;
         int b = RandomUtils.getRandomNumber() + 1;
         questionToText = a + " " + b;
         question = findGcd(a, b);
     }
-    private static String convertQuestionToText() {
+    private static String convertGcdQuestionToText() {
         return questionToText;
     }
-    private static String getCorrectAnswer() {
+    private static String getCorrectGcdAnswer() {
         return String.valueOf(question);
     }
     private static int findGcd(int a, int b) {
@@ -41,9 +41,9 @@ public class Gcd {
         String[] arrayOfQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
         int i = 0;
         while (i < arrayOfQuestionsAndCorrectAnswers.length) {
-            getQuestion();
-            arrayOfQuestionsAndCorrectAnswers[i] = convertQuestionToText();
-            arrayOfQuestionsAndCorrectAnswers[i + 1] = getCorrectAnswer();
+            getGcdQuestion();
+            arrayOfQuestionsAndCorrectAnswers[i] = convertGcdQuestionToText();
+            arrayOfQuestionsAndCorrectAnswers[i + 1] = getCorrectGcdAnswer();
             i = i + 2;
         }
         Engine.mainEngine(GAME_QUESTION, arrayOfQuestionsAndCorrectAnswers);

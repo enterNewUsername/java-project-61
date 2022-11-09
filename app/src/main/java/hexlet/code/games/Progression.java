@@ -9,7 +9,7 @@ public class Progression {
     private static int question = 0;
     private static String questionToText = "";
     static final String GAME_QUESTION = "What number is missing in the progression?";
-    private static void getQuestion() {
+    private static void getProgressionQuestion() {
         final int progressionLength = 10;
         int diff = RandomUtils.getRandomNumber();
         int firstElement = RandomUtils.getRandomNumber();
@@ -18,10 +18,10 @@ public class Progression {
         question = progression[hiddenElementNumber];
         questionToText = hideElement(progression, hiddenElementNumber);
     }
-    private static String convertQuestionToText() {
+    private static String convertProgressionQuestionToText() {
         return questionToText;
     }
-    private static String getCorrectAnswer() {
+    private static String getCorrectProgressionAnswer() {
         return String.valueOf(question);
     }
     private static int @NotNull [] makeProgression(int progressionLength, int firstElement, int diff) {
@@ -42,9 +42,9 @@ public class Progression {
         String[] arrayOfQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
         int i = 0;
         while (i < arrayOfQuestionsAndCorrectAnswers.length) {
-            getQuestion();
-            arrayOfQuestionsAndCorrectAnswers[i] = convertQuestionToText();
-            arrayOfQuestionsAndCorrectAnswers[i + 1] = getCorrectAnswer();
+            getProgressionQuestion();
+            arrayOfQuestionsAndCorrectAnswers[i] = convertProgressionQuestionToText();
+            arrayOfQuestionsAndCorrectAnswers[i + 1] = getCorrectProgressionAnswer();
             i = i + 2;
         }
         Engine.mainEngine(GAME_QUESTION, arrayOfQuestionsAndCorrectAnswers);

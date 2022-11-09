@@ -7,13 +7,13 @@ public class Calc {
     private static int question = 0;
     private static String questionToText = "";
     static final String GAME_QUESTION = "What is the result of the expression?";
-    private static void getQuestion() {
+    private static void getCalcQuestion() {
         calcChoice();
     }
-    private static String convertQuestionToText() {
+    private static String convertCalcQuestionToText() {
         return questionToText;
     }
-    private static String getCorrectAnswer() {
+    private static String getCorrectCalcAnswer() {
         return String.valueOf(question);
     }
     private static void calcChoice() {
@@ -44,9 +44,9 @@ public class Calc {
         String[] arrayOfQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
         int i = 0;
         while (i < arrayOfQuestionsAndCorrectAnswers.length) {
-            getQuestion();
-            arrayOfQuestionsAndCorrectAnswers[i] = convertQuestionToText();
-            arrayOfQuestionsAndCorrectAnswers[i + 1] = getCorrectAnswer();
+            getCalcQuestion();
+            arrayOfQuestionsAndCorrectAnswers[i] = convertCalcQuestionToText();
+            arrayOfQuestionsAndCorrectAnswers[i + 1] = getCorrectCalcAnswer();
             i = i + 2;
         }
         Engine.mainEngine(GAME_QUESTION, arrayOfQuestionsAndCorrectAnswers);
