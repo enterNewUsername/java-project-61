@@ -41,15 +41,15 @@ public class Calc {
 
     }
     public static void runCalcGame() {
-        String[] arrayOfQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
+        String[] calcQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
         int i = 0;
-        while (i < arrayOfQuestionsAndCorrectAnswers.length) {
+        while (i < calcQuestionsAndCorrectAnswers.length) {
             getCalcQuestion();
-            arrayOfQuestionsAndCorrectAnswers[i] = convertCalcQuestionToText();
-            arrayOfQuestionsAndCorrectAnswers[i + 1] = getCorrectCalcAnswer();
+            calcQuestionsAndCorrectAnswers[i] = convertCalcQuestionToText();
+            calcQuestionsAndCorrectAnswers[i + 1] = getCorrectCalcAnswer();
             i = i + 2;
         }
-        Engine.mainEngine(GAME_QUESTION, arrayOfQuestionsAndCorrectAnswers);
+        Engine.mainEngine(GAME_QUESTION, calcQuestionsAndCorrectAnswers);
 
     }
 }

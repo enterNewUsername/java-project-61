@@ -19,15 +19,15 @@ public class Even {
         return question % 2 == 0;
     }
     public static void runEvenGame() {
-        String[] arrayOfQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
+        String[] evenQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
         int i = 0;
-        while (i < arrayOfQuestionsAndCorrectAnswers.length) {
+        while (i < evenQuestionsAndCorrectAnswers.length) {
             getEvenQuestion();
-            arrayOfQuestionsAndCorrectAnswers[i] = convertEvenQuestionToText();
-            arrayOfQuestionsAndCorrectAnswers[i + 1] = getCorrectEvenAnswer();
+            evenQuestionsAndCorrectAnswers[i] = convertEvenQuestionToText();
+            evenQuestionsAndCorrectAnswers[i + 1] = getCorrectEvenAnswer();
             i = i + 2;
         }
-        Engine.mainEngine(GAME_QUESTION, arrayOfQuestionsAndCorrectAnswers);
+        Engine.mainEngine(GAME_QUESTION, evenQuestionsAndCorrectAnswers);
 
     }
 

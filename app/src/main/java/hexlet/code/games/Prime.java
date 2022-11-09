@@ -30,15 +30,15 @@ public class Prime {
         return true;
     }
     public static void runPrimeGame() {
-        String[] arrayOfQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
+        String[] primeQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
         int i = 0;
-        while (i < arrayOfQuestionsAndCorrectAnswers.length) {
+        while (i < primeQuestionsAndCorrectAnswers.length) {
             getPrimeQuestion();
-            arrayOfQuestionsAndCorrectAnswers[i] = convertPrimeQuestionToText();
-            arrayOfQuestionsAndCorrectAnswers[i + 1] = getCorrectPrimeAnswer();
+            primeQuestionsAndCorrectAnswers[i] = convertPrimeQuestionToText();
+            primeQuestionsAndCorrectAnswers[i + 1] = getCorrectPrimeAnswer();
             i = i + 2;
         }
-        Engine.mainEngine(GAME_QUESTION, arrayOfQuestionsAndCorrectAnswers);
+        Engine.mainEngine(GAME_QUESTION, primeQuestionsAndCorrectAnswers);
 
     }
 }

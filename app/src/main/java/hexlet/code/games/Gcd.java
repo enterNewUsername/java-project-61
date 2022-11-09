@@ -38,15 +38,15 @@ public class Gcd {
         return b;
     }
     public static void runGcdGame() {
-        String[] arrayOfQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
+        String[] gcdQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
         int i = 0;
-        while (i < arrayOfQuestionsAndCorrectAnswers.length) {
+        while (i < gcdQuestionsAndCorrectAnswers.length) {
             getGcdQuestion();
-            arrayOfQuestionsAndCorrectAnswers[i] = convertGcdQuestionToText();
-            arrayOfQuestionsAndCorrectAnswers[i + 1] = getCorrectGcdAnswer();
+            gcdQuestionsAndCorrectAnswers[i] = convertGcdQuestionToText();
+            gcdQuestionsAndCorrectAnswers[i + 1] = getCorrectGcdAnswer();
             i = i + 2;
         }
-        Engine.mainEngine(GAME_QUESTION, arrayOfQuestionsAndCorrectAnswers);
+        Engine.mainEngine(GAME_QUESTION, gcdQuestionsAndCorrectAnswers);
 
     }
 

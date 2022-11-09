@@ -39,15 +39,15 @@ public class Progression {
         return StringUtils.join(convertedToArray, ' ');
     }
     public static void runProgressionGame() {
-        String[] arrayOfQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
+        String[] progressionQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
         int i = 0;
-        while (i < arrayOfQuestionsAndCorrectAnswers.length) {
+        while (i < progressionQuestionsAndCorrectAnswers.length) {
             getProgressionQuestion();
-            arrayOfQuestionsAndCorrectAnswers[i] = convertProgressionQuestionToText();
-            arrayOfQuestionsAndCorrectAnswers[i + 1] = getCorrectProgressionAnswer();
+            progressionQuestionsAndCorrectAnswers[i] = convertProgressionQuestionToText();
+            progressionQuestionsAndCorrectAnswers[i + 1] = getCorrectProgressionAnswer();
             i = i + 2;
         }
-        Engine.mainEngine(GAME_QUESTION, arrayOfQuestionsAndCorrectAnswers);
+        Engine.mainEngine(GAME_QUESTION, progressionQuestionsAndCorrectAnswers);
 
     }
 }
