@@ -18,12 +18,6 @@ public class Progression {
         question = progression[hiddenElementNumber];
         questionToText = hideElement(progression, hiddenElementNumber);
     }
-    private static String convertProgressionQuestionToText() {
-        return questionToText;
-    }
-    private static String getCorrectProgressionAnswer() {
-        return String.valueOf(question);
-    }
     private static int @NotNull [] makeProgression(int progressionLength, int firstElement, int diff) {
         int[] progression = new int[progressionLength];
         for (var i = 0; i < progressionLength; i++) {
@@ -43,8 +37,8 @@ public class Progression {
         int i = 0;
         while (i < progressionQuestionsAndCorrectAnswers.length) {
             getProgressionQuestion();
-            progressionQuestionsAndCorrectAnswers[i] = convertProgressionQuestionToText();
-            progressionQuestionsAndCorrectAnswers[i + 1] = getCorrectProgressionAnswer();
+            progressionQuestionsAndCorrectAnswers[i] = questionToText;
+            progressionQuestionsAndCorrectAnswers[i + 1] = String.valueOf(question);
             i = i + 2;
         }
         Engine.mainEngine(GAME_QUESTION, progressionQuestionsAndCorrectAnswers);
