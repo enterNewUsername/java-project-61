@@ -6,19 +6,13 @@ import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
 public class Progression {
-    private static int question = 0;
-    private static String questionToText = "";
     static final String GAME_QUESTION = "What number is missing in the progression?";
-    private static void getProgressionQuestion() {
+    private static int @NotNull [] makeProgression() {
+
         final int progressionLength = 10;
         int diff = RandomUtils.getRandomNumber();
         int firstElement = RandomUtils.getRandomNumber();
-        int[] progression = makeProgression(progressionLength, firstElement, diff);
-        int hiddenElementNumber = RandomUtils.getRandomNumber(0, progressionLength - 1);
-        question = progression[hiddenElementNumber];
-        questionToText = hideElement(progression, hiddenElementNumber);
-    }
-    private static int @NotNull [] makeProgression(int progressionLength, int firstElement, int diff) {
+
         int[] progression = new int[progressionLength];
         for (var i = 0; i < progressionLength; i++) {
             progression[i] = firstElement;
@@ -33,15 +27,16 @@ public class Progression {
         return StringUtils.join(convertedToArray, ' ');
     }
     public static void runProgressionGame() {
-        String[] progressionQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
+        String[][] questionsAndCorrectAnswers = new String[RandomUtils.getCountOfQuestions()][2];
         int i = 0;
-        while (i < progressionQuestionsAndCorrectAnswers.length) {
-            getProgressionQuestion();
-            progressionQuestionsAndCorrectAnswers[i] = questionToText;
-            progressionQuestionsAndCorrectAnswers[i + 1] = String.valueOf(question);
-            i = i + 2;
+        while (i < questionsAndCorrectAnswers.length) {
+            int[] progression = makeProgression();
+            int hiddenElementNumber = RandomUtils.getRandomNumber(0, progression.length - 1);
+            questionsAndCorrectAnswers[i][0] = hideElement(progression, hiddenElementNumber);
+            questionsAndCorrectAnswers[i][1] = String.valueOf(progression[hiddenElementNumber]);
+            i++;
         }
-        Engine.mainEngine(GAME_QUESTION, progressionQuestionsAndCorrectAnswers);
+        Engine.runGame(GAME_QUESTION, questionsAndCorrectAnswers);
 
     }
 }

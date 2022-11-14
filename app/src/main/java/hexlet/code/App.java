@@ -1,25 +1,34 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Cli;
-import hexlet.code.games.Even;
-import hexlet.code.games.Gcd;
+import hexlet.code.games.Calculator;
+import hexlet.code.games.OddEven;
+import hexlet.code.games.GreatestCommonDivisor;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
 public class App {
+    static final String HEADER = "Please enter the game number and press Enter.";
+    static final String MENU = """
+            1 - Greet
+            2 - Even
+            3 - Calc
+            4 - GCD
+            5 - Progression
+            6 - Prime
+            0 - Exit
+            Your choice:\s""";
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter the game number and press Enter.");
-        System.out.println("1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n6 - Prime\n0 - Exit");
-        System.out.print("Your choice: ");
-        switch (scanner.next()) {
+        System.out.println(HEADER);
+        System.out.print(MENU);
+        String answer = scanner.next();
+        switch (answer) {
             case "1" -> Cli.greeting();
-            case "2" -> Even.runEvenGame();
-            case "3" -> Calc.runCalcGame();
-            case "4" -> Gcd.runGcdGame();
+            case "2" -> OddEven.runEvenGame();
+            case "3" -> Calculator.runCalcGame();
+            case "4" -> GreatestCommonDivisor.runGcdGame();
             case "5" -> Progression.runProgressionGame();
             case "6" -> Prime.runPrimeGame();
             default -> System.out.println("Incorrect choice!");

@@ -3,24 +3,26 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static void mainEngine(String gameQuestion, String[] arrayOfQuestionsAndCorrectAnswers) {
+    static final String GREETING_STR = "Welcome to the Brain Games!\nMay I have your name?";
+    static final String ANSWER_STR = "Your answer: ";
+    static final String CORRECT_STR = "Correct!";
+    public static void runGame(String gameQuestion, String[][] arrayOfQuestionsAndCorrectAnswers) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
+        System.out.println(GREETING_STR);
         String userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
         System.out.println(gameQuestion);
         int i = 0;
             while (i < arrayOfQuestionsAndCorrectAnswers.length) {
-                System.out.println("Question: " + arrayOfQuestionsAndCorrectAnswers[i]);
-                System.out.print("Your answer: ");
+                System.out.println("Question: " + arrayOfQuestionsAndCorrectAnswers[i][0]);
+                System.out.print(ANSWER_STR);
                 String answer = scanner.next();
-                if (answer.equals(arrayOfQuestionsAndCorrectAnswers[i + 1])) {
-                    System.out.println("Correct!");
-                    i = i + 2;
+                if (answer.equals(arrayOfQuestionsAndCorrectAnswers[i][1])) {
+                    System.out.println(CORRECT_STR);
+                    i++;
                 } else {
                     System.out.print("'" + answer + "'" + " is wrong answer ;(.");
-                    System.out.println(" Correct answer was " + "'" + arrayOfQuestionsAndCorrectAnswers[i + 1] + "'");
+                    System.out.println(" Correct answer was " + "'" + arrayOfQuestionsAndCorrectAnswers[i][1] + "'");
                     System.out.println("Let's try again, " + userName + "!");
                     return;
                 }

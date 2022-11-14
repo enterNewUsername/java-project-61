@@ -4,15 +4,11 @@ import hexlet.code.Engine;
 import hexlet.code.RandomUtils;
 
 public class Prime {
-    private static int question;
     static final String GAME_QUESTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    private static String convertPrimeQuestionToText() {
-        return String.valueOf(question);
+    private static String getCorrectPrimeAnswer(int question) {
+        return checkPrimeOrNot(question) ? "yes" : "no";
     }
-    private static String getCorrectPrimeAnswer() {
-        return isPrime() ? "yes" : "no";
-    }
-    private static boolean isPrime() {
+    private static boolean checkPrimeOrNot(int question) {
         if (question < 2) {
             return false;
         }
@@ -27,15 +23,15 @@ public class Prime {
         return true;
     }
     public static void runPrimeGame() {
-        String[] primeQuestionsAndCorrectAnswers = new String[RandomUtils.getMaxCountOfQuestionsAndAnswers()];
+        String[][] questionsAndCorrectAnswers = new String[RandomUtils.getCountOfQuestions()][2];
         int i = 0;
-        while (i < primeQuestionsAndCorrectAnswers.length) {
-            question = RandomUtils.getRandomNumber();
-            primeQuestionsAndCorrectAnswers[i] = convertPrimeQuestionToText();
-            primeQuestionsAndCorrectAnswers[i + 1] = getCorrectPrimeAnswer();
-            i = i + 2;
+        while (i < questionsAndCorrectAnswers.length) {
+           int question = RandomUtils.getRandomNumber();
+            questionsAndCorrectAnswers[i][0] = String.valueOf(question);
+            questionsAndCorrectAnswers[i][1] = getCorrectPrimeAnswer(question);
+            i++;
         }
-        Engine.mainEngine(GAME_QUESTION, primeQuestionsAndCorrectAnswers);
+        Engine.runGame(GAME_QUESTION, questionsAndCorrectAnswers);
 
     }
 }
