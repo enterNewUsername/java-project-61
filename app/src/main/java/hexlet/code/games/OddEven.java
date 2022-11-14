@@ -10,12 +10,11 @@ public class OddEven {
     }
     public static void runEvenGame() {
         String[][] questionsAndCorrectAnswers = new String[RandomUtils.getCountOfQuestions()][2];
-        int i = 0;
-        while (i < questionsAndCorrectAnswers.length) {
+
+       for (int i = 0; i < questionsAndCorrectAnswers.length; i++) {
             int question = RandomUtils.getRandomNumber();
             questionsAndCorrectAnswers[i][0] = String.valueOf(question);
             questionsAndCorrectAnswers[i][1] = getCorrectEvenAnswer(question);
-            i++;
         }
         Engine.runGame(GAME_QUESTION, questionsAndCorrectAnswers);
 
