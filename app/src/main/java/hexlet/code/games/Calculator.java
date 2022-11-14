@@ -22,7 +22,7 @@ public class Calculator {
         String[][] questionsAndCorrectAnswers = new String[RandomUtils.getCountOfQuestions()][2];
         int i = 0;
         while (i < questionsAndCorrectAnswers.length) {
-            questionsAndCorrectAnswers[i] = getCalcChoice(RandomUtils.getRandomNumber(0, COUNT_OF_OPERATIONS));
+            questionsAndCorrectAnswers[i] = getCalcChoice(RandomUtils.getRandomNumber(0, COUNT_OF_OPERATIONS - 1));
             i++;
         }
         Engine.runGame(GAME_QUESTION, questionsAndCorrectAnswers);
