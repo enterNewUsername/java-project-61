@@ -6,6 +6,8 @@ public class Engine {
     static final String GREETING_STR = "Welcome to the Brain Games!\nMay I have your name?";
     static final String ANSWER_STR = "Your answer: ";
     static final String CORRECT_STR = "Correct!";
+    static final int COUNT_OF_QUESTIONS = 3;
+
     public static void runGame(String gameQuestion, String[][] arrayOfQuestionsAndCorrectAnswers) {
         Scanner scanner = new Scanner(System.in);
         System.out.println(GREETING_STR);
@@ -30,4 +32,7 @@ public class Engine {
         System.out.println("Congratulations, " + userName + "!");
         }
 
+    public static int getCountOfQuestions() {
+        return COUNT_OF_QUESTIONS;
+    }
 }

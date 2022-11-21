@@ -24,7 +24,7 @@ public class GreatestCommonDivisor {
         return b;
     }
     public static void runGcdGame() {
-        String[][] questionsAndCorrectAnswers = new String[RandomUtils.getCountOfQuestions()][2];
+        String[][] questionsAndCorrectAnswers = new String[Engine.getCountOfQuestions()][2];
         int i = 0;
         while (i < questionsAndCorrectAnswers.length) {
             int a = RandomUtils.getRandomNumber() + 1;

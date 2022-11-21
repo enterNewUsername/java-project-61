@@ -3,11 +3,9 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.jetbrains.annotations.NotNull;
-
 public class Progression {
     static final String GAME_QUESTION = "What number is missing in the progression?";
-    private static int @NotNull [] makeProgression() {
+    private static int[] makeProgression() {
 
         final int progressionLength = 10;
         int diff = RandomUtils.getRandomNumber();
@@ -20,14 +18,14 @@ public class Progression {
         }
         return progression;
     }
-    private static @NotNull String hideElement(int[] progression, int elementNumber) {
+    private static String hideElement(int[] progression, int elementNumber) {
         String convertedToString = StringUtils.join(progression, ' ');
         String[] convertedToArray = convertedToString.split(" ");
         convertedToArray[elementNumber] = "..";
         return StringUtils.join(convertedToArray, ' ');
     }
     public static void runProgressionGame() {
-        String[][] questionsAndCorrectAnswers = new String[RandomUtils.getCountOfQuestions()][2];
+        String[][] questionsAndCorrectAnswers = new String[Engine.getCountOfQuestions()][2];
         int i = 0;
         while (i < questionsAndCorrectAnswers.length) {
             int[] progression = makeProgression();
