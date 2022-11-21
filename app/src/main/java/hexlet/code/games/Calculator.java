@@ -4,16 +4,14 @@ import hexlet.code.Engine;
 import hexlet.code.RandomUtils;
 
 public class Calculator {
-    static final int COUNT_OF_OPERATIONS = 3;
+    static final String[] CALC_OPERATIONS = {
+            " + ",
+            " * ",
+            " - ",
+    };
     static final String GAME_QUESTION = "What is the result of the expression?";
     private static String getCalcChoice(int randomizer) {
-
-       String[] choiceOfOperation = {
-               " + ",
-               " * ",
-               " - ",
-       };
-       return choiceOfOperation[randomizer];
+       return CALC_OPERATIONS[randomizer];
 
     }
     private static String getCorrectAnswer(String operation, int x, int y) {
@@ -30,7 +28,7 @@ public class Calculator {
         while (i < questionsAndCorrectAnswers.length) {
             int x = RandomUtils.getRandomNumber();
             int y = RandomUtils.getRandomNumber();
-            String operation = getCalcChoice(RandomUtils.getRandomNumber(0, COUNT_OF_OPERATIONS - 1));
+            String operation = getCalcChoice(RandomUtils.getRandomNumber(0, CALC_OPERATIONS.length - 1));
 
             questionsAndCorrectAnswers[i][0] = x + operation + y;
             questionsAndCorrectAnswers[i][1] = getCorrectAnswer(operation, x, y);
