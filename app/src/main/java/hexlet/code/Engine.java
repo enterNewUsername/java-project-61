@@ -31,7 +31,6 @@ public class Engine {
             }
         System.out.println("Congratulations, " + userName + "!");
         }
-
     public static int getCountOfQuestions() {
         return COUNT_OF_QUESTIONS;
     }

@@ -4,9 +4,19 @@ import hexlet.code.Engine;
 import hexlet.code.RandomUtils;
 
 public class Prime {
+    static final int MIN_RANDOM_NUMBER = 0;
+    static final int MAX_RANDOM_NUMBER = 999;
     static final String GAME_QUESTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    private static boolean getCorrectPrimeAnswer(int question) {
-        return isPrime(question);
+    public static void runPrimeGame() {
+        String[][] questionsAndCorrectAnswers = new String[Engine.getCountOfQuestions()][2];
+        int i = 0;
+        while (i < questionsAndCorrectAnswers.length) {
+            int question = RandomUtils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+            questionsAndCorrectAnswers[i][0] = String.valueOf(question);
+            questionsAndCorrectAnswers[i][1] = isPrime(question) ? "yes" : "no";
+            i++;
+        }
+        Engine.runGame(GAME_QUESTION, questionsAndCorrectAnswers);
     }
     private static boolean isPrime(int question) {
         if (question < 2) {
@@ -21,17 +31,5 @@ public class Prime {
             }
         }
         return true;
-    }
-    public static void runPrimeGame() {
-        String[][] questionsAndCorrectAnswers = new String[Engine.getCountOfQuestions()][2];
-        int i = 0;
-        while (i < questionsAndCorrectAnswers.length) {
-           int question = RandomUtils.getRandomNumber();
-            questionsAndCorrectAnswers[i][0] = String.valueOf(question);
-            questionsAndCorrectAnswers[i][1] = getCorrectPrimeAnswer(question) ? "yes" : "no";
-            i++;
-        }
-        Engine.runGame(GAME_QUESTION, questionsAndCorrectAnswers);
-
     }
 }
