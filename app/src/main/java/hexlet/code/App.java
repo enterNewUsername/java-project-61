@@ -33,5 +33,5 @@ public class App {
             case "6" -> Prime.runPrimeGame();
             default -> System.out.println("Incorrect choice!");
         }
-        }
+    }
 }
