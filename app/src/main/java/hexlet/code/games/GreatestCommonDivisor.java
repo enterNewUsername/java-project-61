@@ -18,7 +18,6 @@ public class GreatestCommonDivisor {
             i++;
         }
         Engine.runGame(GAME_QUESTION, questionsAndCorrectAnswers);
-
     }
     private static int findGcd(int a, int b) {
         int temp = 0;

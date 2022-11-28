@@ -9,7 +9,6 @@ public class OddEven {
     static final String GAME_QUESTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     public static void runEvenGame() {
         String[][] questionsAndCorrectAnswers = new String[Engine.getCountOfQuestions()][2];
-
         for (int i = 0; i < questionsAndCorrectAnswers.length; i++) {
             int question = RandomUtils.getRandomNumber(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
             questionsAndCorrectAnswers[i][0] = String.valueOf(question);
